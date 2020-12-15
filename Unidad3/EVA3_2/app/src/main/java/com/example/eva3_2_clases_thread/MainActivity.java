@@ -12,22 +12,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //A traves de clases anonimas
         Thread miHilo = new Thread(){
             @Override
             public void run() {
                 super.run();
+
                 for (int i=0; i<10; i++){
                     try {
                         Thread.sleep(1000);
                         Log.wtf("mi hilo ", i +"" );
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                    } catch (InterruptedException e) { e.printStackTrace(); }
                 }
             }
         };
             miHilo.start();
+
+
+
+
             MiHilote miHilote = new MiHilote();
             miHilote.start();
     }
@@ -39,7 +41,7 @@ class MiHilote extends Thread {
         for (int i=0; i<10; i++){
             try {
                 Thread.sleep(1000);
-                Log.wtf("mi hilo 2", i +"");
+                Log.wtf("mi h 2", i +"");
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

@@ -8,14 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
-    Intent intento;
+    Intent inte;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        intento = new Intent(Intent.ACTION_CALL, Uri.parse("Tel:1301"));
+        inte = new Intent(Intent.ACTION_CALL, Uri.parse("Tel:123214321"));
     }
     public void onClick(View v){
-        startActivity(intento);
+        startActivity(inte);
     }
 }

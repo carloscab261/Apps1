@@ -12,8 +12,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        txtD = findViewById(R.id.txtDatos);
-
+        txtD = findViewById(R.id.txtD);
         Thread tHilo = new Thread(){
             @Override
             public void run() {
@@ -25,10 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
                     } catch (InterruptedException e) {
                         e.printStackTrace();
-
                     }
                     Log.wtf("Runnable", i + "");
-                    txtD.append(i + "\n");
+                    txtD.append(i + "\n   ");
                     i++;
                 }
             }

@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     TextView txtD;
-    Handler mHand=new Handler(){
+    Handler mH=new Handler(){
         @Override
         public void handleMessage(@NonNull Message msg) {
             super.handleMessage(msg);
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        txtD = findViewById(R.id.txtDatos);
+        txtD = findViewById(R.id.txtD);
 
         Thread tHilo = new Thread(){
             @Override
@@ -33,17 +33,12 @@ public class MainActivity extends AppCompatActivity {
                 while(true){
                     try {
                         Thread.sleep(1000);
-
                     } catch (InterruptedException e) {
                         e.printStackTrace();
-
-                    }
-                    Message msg = mHand.obtainMessage(1000, i);
-                    mHand.sendMessage(msg);
+                    }Message msg = mH.obtainMessage(1000, i);
+                    mH.sendMessage(msg);
                     Log.wtf("Runnable", i + "");
-                    //txtD.append(i + "\n");
-                    i++;
-                }
+                    i++; }
             }
         };
         tHilo.start();

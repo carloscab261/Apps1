@@ -7,15 +7,15 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 public class DetailActivity extends AppCompatActivity {
-    TextView txtD;
+    TextView txt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        txtD = findViewById(R.id.textView);
+        txt = findViewById(R.id.textView);
         Intent intent = getIntent();
-        txtD.append(intent.getStringExtra("Mensaje"));
-        txtD.append(""+intent.getIntExtra("Entero",100));
-        txtD.append(""+intent.getFloatExtra("Precio", 20.0f));
+        txt.append(intent.getStringExtra("Mensaje"));
+        txt.append(""+intent.getIntExtra("Entero",200));
+        txt.append(""+intent.getFloatExtra("Precio", 30.0f));
     }
 }

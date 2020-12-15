@@ -9,19 +9,19 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     Intent intent;
-    Button btnLz;
+    Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-         btnLz = findViewById(R.id.btnLz);
-         btnLz.setOnClickListener(new View.OnClickListener() {
+         btn = findViewById(R.id.btn);
+         btn.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
                  intent = new Intent(getApplicationContext(), DetailActivity.class);
-                 intent.putExtra("Mensaje","Hola mundo ");
-                 intent.putExtra("Entero", 100+" ");
-                 intent.putExtra("Precio", 20.0f);
+                 intent.putExtra("Mensaje","Hola ");
+                 intent.putExtra("Entero", 300+" ");
+                 intent.putExtra("Precio", 30.0f);
                  startActivity(intent);
              }
          });

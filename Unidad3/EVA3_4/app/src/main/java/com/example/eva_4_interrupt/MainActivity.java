@@ -25,14 +25,10 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     Thread.sleep(1000);
                     Log.w("Runnable", i + "");
-                    i++;
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                    i++; } catch (InterruptedException e) { e.printStackTrace(); }
             }
         }
     };
-
 
     Thread thread;
     @Override
@@ -41,14 +37,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Thread thread = new Thread((runnable ));
         thread.start();
-
-
     }
 
 
     protected void onStop() {
-        super.onStop();
-        thread.interrupt();
+        super.onStop(); thread.interrupt();
     }
-
 }

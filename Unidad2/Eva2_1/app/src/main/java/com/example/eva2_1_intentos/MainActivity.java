@@ -13,10 +13,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        String sTel = "tel:1234567890";
-        inte = new Intent(Intent.ACTION_DIAL, Uri.parse(sTel));
+        String Tele = "tel:5465489";
+        inte = new Intent(Intent.ACTION_DIAL, Uri.parse(Tele));
     }
     public void onClick(View v){
+    //"sadsadsa"
+
 
     }
 }

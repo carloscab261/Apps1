@@ -15,7 +15,7 @@
         android:text="Introduce el numero telefonico" />
 
     <EditText
-        android:id="@+id/eTelTxt"
+        android:id="@+id/txt1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight=".5"
@@ -30,7 +30,7 @@
         android:text="Introdusca el mensaje de texto " />
 
     <EditText
-        android:id="@+id/eMsjTxt"
+        android:id="@+id/txt2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight=".5"

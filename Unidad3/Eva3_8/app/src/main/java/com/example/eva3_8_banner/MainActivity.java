@@ -4,14 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
-    ImageView   imgV;
-    int[] Imgs= {R.drawable.f1,R.drawable.f2,R.drawable.f3};
-    int indice = 0;
-    Handler hImg = new Handler();
+    ImageView   imgn;
+    int[] Imggs= {R.drawable.f1,R.drawable.f2,R.drawable.f3};
+    int indq = 0;
+    Handler hm = new Handler();
     Runnable backRun= new Runnable() {
         @Override
         public void run() {
@@ -21,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();}
-                hImg.post(foreRun);
+                hm.post(foreRun);
 
             }
         }
@@ -30,18 +29,18 @@ public class MainActivity extends AppCompatActivity {
     Runnable foreRun= new Runnable() {
         @Override
         public void run() {
-            imgV.setImageResource(Imgs[indice]);
-            if (indice==2){
-                indice=0;
+            imgn.setImageResource(Imggs[indq]);
+            if (indq==2){
+                indq=0;
         }else{
-                indice++;
+                indq++;
             }
     }};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        imgV=findViewById(R.id.imgV);
+        imgn=findViewById(R.id.imgg);
         Thread hilo = new Thread(backRun);
         hilo.start();
     }

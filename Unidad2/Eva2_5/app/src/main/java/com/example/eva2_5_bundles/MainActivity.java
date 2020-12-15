@@ -10,25 +10,40 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
-    String[] Cd={"Chihuahua","Parral","Delicias","Aldama","Juarez","Villa Ahuamda","Jimenez","Majalca","Atlantida","Tangamandapio","Aqui","Alla","PorAkulla"};
-    ListView lstV;
-    Intent intento;
+
+    String [] dat = {
+            "Chihuahua",
+            "Arboledo",
+            "Delicias",
+            "Juarez",
+            "Tijuana",
+            "Mexicali",
+            "Jimenez",
+            "Durango",
+            "Nuevo leon",
+            "monterrey",
+            "Casas grandes",
+
+
+    }
+    ListView Da;
+    Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        lstV=findViewById(R.id.LstV);
-        intento = new Intent(this, DetailActivity.class);
-        lstV.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,Cd));
+        Da = findViewById(R.id.Da);
+        intent = new Intent(this, DetailActivity.class);
+        Da.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, dat));
 
-        lstV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        Da.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Bundle bundle = new Bundle();
-                bundle.putString("Ciudad", Cd[i]);
-                bundle.putString("Posicion", String.valueOf(i));
-                intento.putExtras(bundle);
-                startActivity(intento);
+                bundle.putString("Ciudad", dat[i]);
+                bundle.putInt("Posición", i);
+                intent.putExtra(bundlee);
+                startActivity(intent);
             }
         });
     }

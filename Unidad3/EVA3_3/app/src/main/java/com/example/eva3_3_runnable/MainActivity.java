@@ -25,9 +25,7 @@ public class MainActivity extends AppCompatActivity {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
-                    Log.wtf("Runnable 1", i + "");
-                }
-
+                    Log.wtf("run 1", i + ""); }
             }
         }
     };
@@ -48,8 +46,7 @@ class MiRunnable implements Runnable{
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
-                e.printStackTrace();
-                Log.wtf("Runnable 2", i + "");
+                e.printStackTrace(); Log.wtf("run 2", i + "");
             }
 
         }
